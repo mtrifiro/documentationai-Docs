@@ -12,7 +12,13 @@
     "dropdowns": [
       {
         "dropdown": "Home",
-        "pages": [],
+        "pages": [
+          {
+            "title": "Home",
+            "path": "home",
+            "icon": "home"
+          }
+        ],
         "icon": "home"
       },
       {
