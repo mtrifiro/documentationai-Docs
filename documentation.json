@@ -11,6 +11,11 @@
   "navigation": {
     "dropdowns": [
       {
+        "dropdown": "Home",
+        "pages": [],
+        "icon": "home"
+      },
+      {
         "dropdown": "Manifesto",
         "pages": [
           {
