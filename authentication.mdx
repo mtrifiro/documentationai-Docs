@@ -1,0 +1,153 @@
+---
+title: Authentication and Access Control
+description: Manage your login, permissions, and security settings to safely interact within the COSSA platform.
+---
+
+## Overview
+
+Secure your COSSA account with multiple login options, role-based permissions, and API tokens for programmatic access. You control access through email/password, OAuth providers, and two-factor authentication (2FA). API tokens enable seamless integrations while maintaining strict security.
+
+<Callout kind="alert">
+Protect your credentials. Never share API tokens or passwords. Use environment variables for production integrations.
+</Callout>
+
+## Login Methods
+
+COSSA supports flexible login options. Choose the method that fits your workflow.
+
+<Tabs>
+  <Tab title="Email/Password" icon="mail">
+    Use your registered email and password to log in at `https://dashboard.example.com/login`.
+
+    ```javascript
+    // Example login request
+    const response = await fetch('https://api.example.com/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: 'user@example.com',
+        password: 'your-password'
+      })
+    });
+    ```
+  </Tab>
+  <Tab title="OAuth (Google)" icon="chrome">
+    Link your Google account for single sign-on (SSO).
+
+    1. Visit `https://dashboard.example.com/auth/google`.
+    2. Approve permissions.
+    3. Access granted automatically.
+  </Tab>
+  <Tab title="API Token" icon="key">
+    Authenticate requests directly with tokens (see API Tokens section).
+  </Tab>
+</Tabs>
+
+## Enable Two-Factor Authentication
+
+Activate 2FA to add an extra security layer. Follow these steps:
+
+<Steps>
+  <Step title="Access Settings" icon="settings">
+    Log in and navigate to **Account > Security**.
+  </Step>
+  <Step title="Enable 2FA" icon="shield">
+    Click **Enable Two-Factor** and scan the QR code with your authenticator app (e.g., Google Authenticator).
+  </Step>
+  <Step title="Verify" icon="check-circle">
+    Enter the 6-digit code from your app to confirm.
+  </Step>
+</Steps>
+
+## User Roles and Permissions
+
+Roles define what actions you can perform. Admins manage teams, while members access core features.
+
+<Columns cols={2}>
+  <Card title="Admin" icon="users" horizontal>
+    Full access: Manage users, billing, and integrations.
+  </Card>
+  <Card title="Member" icon="user" horizontal>
+    Read/write access: View dashboards and create projects.
+  </Card>
+  <Card title="Viewer" icon="eye" horizontal>
+    Read-only: Monitor activity without changes.
+  </Card>
+</Columns>
+
+## API Access Tokens
+
+Generate tokens for server-to-server integrations. Tokens inherit your user permissions.
+
+### Generate a Token
+
+<CodeGroup tabs="JavaScript,Python,cURL">
+  ```javascript
+  const response = await fetch('https://api.example.com/tokens', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${YOUR_API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ name: 'My Integration Token' })
+  });
+  const { token } = await response.json();
+  console.log(token);
+  ```
+  ```python
+  import requests
+
+  response = requests.post(
+      'https://api.example.com/tokens',
+      headers={
+          'Authorization': f'Bearer {YOUR_API_KEY}',
+          'Content-Type': 'application/json'
+      },
+      json={'name': 'My Integration Token'}
+  )
+  token = response.json()['token']
+  print(token)
+  ```
+  ```bash
+  curl -X POST https://api.example.com/tokens \
+    -H "Authorization: Bearer YOUR_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{"name": "My Integration Token"}'
+  ```
+</CodeGroup>
+
+### Use Tokens in Requests
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Format: `Bearer your-token-here`
+</ParamField>
+
+<ResponseField name="token" field-type="string" required="true">
+  Your new access token. Store securely.
+</ResponseField>
+
+<ResponseField name="expires_at" field-type="string">
+  Token expiration date (ISO 8601).
+</ResponseField>
+
+## Security Best Practices
+
+Follow these guidelines to keep your account safe.
+
+<ExpandableGroup>
+  <Expandable title="Rotate Tokens Regularly" default-open="true">
+    Revoke and regenerate tokens every 90 days or after potential exposure.
+
+    ```bash
+    curl -X DELETE https://api.example.com/tokens/{token_id} \
+      -H "Authorization: Bearer YOUR_API_KEY"
+    ```
+  </Expandable>
+  <Expandable title="Account Recovery">
+    If locked out, contact support at `support@example.com` with verification details. Enable recovery email in settings first.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">
+Ready to integrate? Check the [Quickstart](/quickstart) for your first API call.
+</Callout>
