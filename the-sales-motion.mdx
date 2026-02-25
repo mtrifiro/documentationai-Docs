@@ -1,0 +1,68 @@
+---
+title: The Sales Motion
+---
+<Image src="https://codahosted.io/docs/xsGC2TrFUD/blobs/bl-3OZnAIMGZ0/fbfcb99e45b4cc403460fd79ae6a27bf6be10ce79ef44ec69e90484f2bec81a0ec5c76f789ebe9f565b73312aff5d3647ae5c75b97b0ff79a11fd2567f6dc975eeebfa040378228146d32d45c2327169c2ba20903b82552b9ec27a3c963c05f8f52de8e8" width="1280" height="800" alt="a-person-wearing-a-business-suit-confide_idMbDlWpSsegXoGgiLAnrw_M8akf_nbR8atwYdGQt6z1Q.png" />
+
+**"Don't sell the software. Sell the insurance."**
+
+In proprietary SaaS, sales is fundamentally a process of discovery. You start with a blank slate, asking open-ended questions like "What keeps you up at night?" or "What are your top priorities for Q3?" The salesperson’s job is to uncover a hidden pain and then skillfully map their solution to that pain. It is an act of revelation, requiring the salesperson to educate the buyer about a problem they might not even fully realize they have.
+
+In Commercial Open Source, sales is a process of **Conversion**. The dynamic is entirely different because the prospect is often already using the product. They know what it does. They know if it works. They might know the codebase better than your own sales engineer. If you treat a COSS lead like a cold SaaS lead, you will insult them. You are not introducing them to a new concept; you are attempting to upgrade an existing relationship. The goal is not to convince them that the software is useful—they already know that. The goal is to convince them that the *commercial relationship* is necessary.
+
+This chapter defines the **Engineering-Led Sales** motion: how to use technical evidence to close deals, how to weaponize the "DIY" competitor, and how to turn your open source footprint into an enterprise revenue engine. It requires a fundamental shift in mindset from "selling features" to "selling governance," and from "hunting for leads" to "harvesting usage."
+
+## The Primary Competitor is "DIY"
+
+In COSS, your biggest competitor is not Datadog, Snowflake, or Oracle. It is **DIY (Do It Yourself).** It is the potential customer's own engineering team saying, "Why should we pay $50k for the Enterprise version when we can just host the open source version ourselves for free?" This is a rational objection. The engineering team is technically capable of hosting the software. They have likely been doing it successfully for months. Your sales team must respect this capability, validate it, and then dismantle the economic logic behind it using **The Bus Factor Argument.**
+
+The core of the argument is that while the code is free, the *maintenance* of that code is expensive. You are not selling code; code is abundant. You are selling **Indemnification, Continuity, and Sleep.** You are selling the guarantee that when the system breaks at 3 AM on a Sunday, it is not their problem to fix it alone.
+
+Consider this script for your sales team: "I see you are running our open source version on 50 nodes. That’s fantastic; it proves the technology works for you. But right now, who maintains that fork? Who patches the CVEs (security vulnerabilities) on Sunday morning? Who debugs the race condition that only happens at 10k transactions per second? If your lead engineer, Dave, leaves next month, you inherit his technical debt. When you buy an Enterprise License, you are transferring that risk to us. We employ the people who wrote the code. We guarantee that someone will answer the phone at 3 AM. You are buying cheap insurance for your most critical infrastructure."
+
+This approach works because it shifts the conversation from the "Price of Software"—where you will always lose to zero—to the "Cost of Risk"—where you will always win. CIOs understand risk. They pay millions to avoid it. By framing the purchase as risk mitigation rather than software acquisition, you align your product with the budgets reserved for insurance, compliance, and stability, rather than the often-squeezed discretionary software budget.
+
+## The "Trojan Horse" Strategy
+
+Proprietary vendors spend millions on marketing to get a meeting with the CIO. They buy billboards, sponsor golf tournaments, and hire armies of SDRs to cold-call executives. As a COSS company, you can bypass the "Front Door" (Procurement) entirely. You use your open source project as a **Trojan Horse** to breach the corporate firewall. You don't need a meeting; you need a docker pull.
+
+The strategy unfolds in three distinct phases. **Phase 1 is Infiltration.** The goal is simply to get the open source version running in a non-critical environment, like development or testing. The tactic here is frictionless documentation. You need a "copy-paste this command to run locally" experience that works in under five minutes. The signal you are looking for in your telemetry is small-scale usage, perhaps 1-5 active nodes. At this stage, you do not sell. You support. You ensure the developer has a great experience.
+
+**Phase 2 is Expansion.** The developer puts the software into a staging environment or a small production app. They start to rely on it. They might encounter a limit, like needing shared login or persistent storage, or they might simply scale up their usage. The telemetry signal shows a jump to 10-50 nodes, and usage becomes consistent, aligning with business hours (Monday-Friday). This indicates that the software has become part of their operational workflow.
+
+**Phase 3 is The "Security Audit" Outreach.** This is the moment to flip the usage to a paid contract. But you do not cold call with a sales pitch. You reach out with a "Service" message. The script might look like this: "Hi \[Manager Name], we noticed your team is running version 1.2 of \[Project] in production. That version has a known vulnerability (CVE-2025-XYZ). We recommend upgrading to Enterprise 2.0 which patches this automatically. Would you like a migration guide?"
+
+This works because you are not selling; you are advising. You have proven you know more about their infrastructure than they do. You are bringing value to the table immediately. This triggers a budget conversation because "Security" is a budget unlock. No CIO wants to be responsible for a breach caused by an unpatched open source library they didn't even know was running. By illuminating the risk, you create the urgency to buy.
+
+## GitHub History as Sales Intel
+
+In SaaS, you research a prospect on LinkedIn. You look for mutual connections, past jobs, and shared interests. In COSS, you research them on GitHu&#x62;**.** Before a sales call, your Sales Engineer (SE) must review the prospect's interaction history with your repository. This is public intelligence that tells you exactly what their pain is, often in excruciating technical detail.
+
+The strategy here is to bring their own code to the meeting—the **"**&#x72;eceipts" strateg&#x79;**.** Imagine a scenario where the prospect filed an Issue three months ago about "High latency in multi-region clusters." This isn't a hypothetical problem; it is a documented pain point that their team took the time to write up.
+
+Your pitch becomes incredibly specific: "I see your team filed Issue #402 regarding multi-region latency. I looked into it, and that’s actually a limitation of the open source consensus algorithm. Our Enterprise version replaces that module with a custom replication engine that solves the latency problem. Here is a benchmark showing the difference. Would you like to enable that module today?"
+
+This approach works for three reasons. First, it establishes immediate credibility. It proves you did the homework and understand their specific technical context. Second, it ensures relevance. You are solving a specific, documented pain point, not a generic one. You aren't guessing what they need; you know what they need. Third, it creates urgency. The problem is already "real" enough that they filed an issue. You are offering an immediate solution to a known headache.
+
+## The POC (Proof of Concept) Trap
+
+In COSS, you must be extremely careful with POCs (Proof of Concepts). Since the software is free, prospects often treat the POC as an indefinite "Science Project." They install the software, play with it for weeks, and never commit to a purchase because they are getting value from the free version during the evaluation.
+
+The **COSS POC Rule** is simple: Never do a POC for the "core" features. The core is free; they can test that themselves without your help. Only do a POC for the enterprise features—SSO, High Availability, Governance, Audit Logs. These are the features that justify the price tag, so these are the features you must qualify.
+
+You must timebox the POC strictly, typically to 14 days maximum. You must define success criteria upfront: "If SSO works and latency is \<50ms, we sign the contract." Without this agreement, the POC can drag on forever. Finally, consider charging for it. Some successful COSS companies charge a "Pilot Fee" (e.g., $10k) that is credited toward the first year's license. This filters out the tire-kickers. If a company won't pay $10k to test the enterprise features, they almost certainly won't pay $100k to buy them. A paid pilot proves serious commercial intent.
+
+## Operationalizing the "Engineering-Led" Team
+
+Your first sales hire should not be a "Coin-Operated" Account Executive (AE) from Oracle or Salesforce. They will fail. They will try to "sell value" to developers who hate being sold to, using scripts that sound hollow to a technical audience.
+
+Your **First Hire** should be a **Technical Account Manager (TAM)** or **Solutions Engineer (SE)**. This person fits a specific profile: they can read code, they can run a demo without crashing, and they can answer "How does this handle eventual consistency?" without saying "I'll get back to you." Their role is to act as a consultant. They help the user succeed with the Open Source version first, earning the right to introduce the Enterprise features later. They build trust through technical competence.
+
+As you scale, you will move to the **"AE + SE" Pod Structure.** You pair a commercial shark (AE) with a technical expert (SE). The AE navigates procurement, negotiates pricing, and handles the "Economic Buyer." The SE owns the trust relationship with the "Technical Champion."
+
+There is one unbreakable rule in this structure: **The AE is never allowed to lie about a feature.** If the SE says "It doesn't do that," the AE must accept it. In proprietary software, you can sometimes sell "vaporware"—features that are coming soon. In COSS, the code is public. If you lie, the community will know immediately, and your brand will be destroyed. Technical honesty is the only way to preserve the trust you have built with the community.
+
+## Summary Checklist for Sales Leaders
+
+To execute this motion effectively, sales leaders need to audit their readiness. First, does your deck explicitly calculate the cost of self-hosting vs. buying, putting a dollar figure on the risk of relying on internal maintenance? Second, is our CRM enriched with GitHub data? Can a rep seeing a lead immediately know if that person has starred, forked, or contributed to the repo? This context is vital. Third, are we selling to the right pain? Are we pitching "features" to devs (who get them for free) or "governance" to managers (who will pay)? Finally, is our "Trojan Horse" working? Are we tracking the conversion rate from "Download" to "Security Audit" to ensure we are effectively harvesting our open source install base?
+
+**Strategic Directive:** Your goal is not to convince the customer to use the software. They are already using it. Your goal is to convince them to insure it.
