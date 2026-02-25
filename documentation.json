@@ -12,30 +12,35 @@
     "tabs": [
       {
         "tab": "The Commercial Open Source Go-to-Market Manifesto",
-        "pages": [
+        "dropdowns": [
           {
-            "title": "Introduction",
-            "path": "introduction"
-          },
-          {
-            "title": "Why Begin With Go-to-Market",
-            "path": "why-begin-with-go-to-market"
-          },
-          {
-            "title": "The Three Phases",
-            "path": "the-three-phases"
-          },
-          {
-            "title": "Phase 1: Ignite",
-            "path": "phase-1-ignite"
-          },
-          {
-            "title": "Phase 3: Scale",
-            "path": "phase-3-scale"
-          },
-          {
-            "title": "Phase 2: Bridge",
-            "path": "phase-2-bridge"
+            "dropdown": "Book",
+            "pages": [
+              {
+                "title": "Introduction",
+                "path": "introduction"
+              },
+              {
+                "title": "Why Begin With Go-to-Market",
+                "path": "why-begin-with-go-to-market"
+              },
+              {
+                "title": "The Three Phases",
+                "path": "the-three-phases"
+              },
+              {
+                "title": "Phase 1: Ignite",
+                "path": "phase-1-ignite"
+              },
+              {
+                "title": "Phase 3: Scale",
+                "path": "phase-3-scale"
+              },
+              {
+                "title": "Phase 2: Bridge",
+                "path": "phase-2-bridge"
+              }
+            ]
           }
         ]
       },
