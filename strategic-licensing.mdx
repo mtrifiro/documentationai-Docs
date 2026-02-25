@@ -1,0 +1,106 @@
+---
+title: Strategic Licensing
+---
+<Image src="https://blob-cdn.documentation.ai/org-f3e0a67d-a1fd-4907-b86c-05bdbdb42c93/doc-c82b9aa2-4a5f-4670-a3c0-77bbb6441351/1772050023791-nd7jttqihij-Strategic-Licensing-chessboard-1772050001580.png?q=85&fm=auto&auto=compress%2Cformat" width="1280" height="800" alt="" />
+
+**"Licenses are not legal footnotes. They are business model enforcement mechanisms."**
+
+For many years, licensing was an ideological badge: you were either 'Free Software' or 'Open Source.' Today, for COSS companies, **licensing is product strategy.** Your license is your defensive moat. It is the mechanism that prevents cloud cannibalization and engineers the scarcity required to monetize. The 'Rug Pull'—changing licenses after achieving ubiquity to trap users—is not a pivot; it is a failure of design. It destroys trust and invites forks because the founder failed to architect a viable business model on Day 1.
+
+We propose the **COSS Covenant**: a transparent, upfront contract. We define the boundary between the Commons (free forever) and the Commercial (paid) before the first line of code is committed.
+
+## The COSS Covenant: Ring-Fencing the Value
+
+Community trust requires total clarity. To eliminate ambiguity, COSS founders must explicitly define three layers of their IP strategy. This is not merely a legal framework; it is a communication strategy that tells your users exactly where they stand.
+
+### **Layer 1: The Core (The Commons)**
+
+This is the engine of your flywheel. It must remain friction-free to ensure maximum distribution and developer adoption.
+
+- **License:** Permissive (Apache 2.0 / MIT).
+
+- **The Promise:** "This code will always be free. It allows you to run the software, inspect it, modify it, and build upon it. It includes the core runtime, standard APIs, and single-node functionality."
+
+- **The Strategy:** This layer optimizes for **ubiquity**. It lowers the barrier to entry to zero. It allows developers to "shadow IT" your product into the enterprise without procurement approval. If you choke this layer, you kill your top-of-funnel.
+
+### **Layer 2: The Enterprise Moat (The Product)**
+
+This is where you capture value. This layer targets the *organization*, not the *individual developer*.
+
+- **License:** Proprietary or Source-Available (e.g., Polyform, ELv2, or a commercial EULA).
+
+- **The Promise:** "These features are for companies operating at scale. They solve organizational problems like compliance, security, and governance. They are paid."
+
+- **The Strategy:** This layer monetizes **complexity and risk**. Features like SSO (Single Sign-On), Audit Logs, Role-Based Access Control (RBAC), and Multi-Region Replication belong here. The individual developer does not care about SSO; the CISO (Chief Information Security Officer) does. You are selling to the CISO, not the hacker.
+
+### **Layer 3: The Cloud Shield (The Protection)**
+
+This is the defense against hyperscalers (AWS, Google, Azure) taking your code and selling it as a service without contributing back.
+
+- **License:** Copyleft (AGPL v3) or Business Source License (BSL).
+
+- **The Promise:** "You cannot take our code, wrap it in a cloud service, and resell it against us without contributing back or paying a license fee."
+
+- **The Strategy:** This prevents the "Amazon Problem." It ensures that if a cloud provider wants to monetize your R\&D, they must either open-source their entire stack (unlikely) or negotiate a commercial partnership with you.
+
+## Licensing as a GTM Lever
+
+Your choice of license is not just a legal decision; it dictates your Go-To-Market (GTM) motion.
+
+### **Permissive (Apache 2.0 / MIT)**
+
+- **GTM Effect:** Lowest friction. Maximum viral growth. High risk of commoditization by competitors or cloud providers.
+
+- **Best For:** Infrastructure standards, languages, libraries, and frameworks where ubiquity is the primary goal (e.g., Kubernetes, React, TensorFlow). If your value comes from an ecosystem *on top* of the code, use permissive.
+
+### **Copyleft (AGPL v3)**
+
+- **GTM Effect:** "Viral" legal protection. Forces companies to open-source their modifications if they distribute or network-host the software.
+
+- **Best For:** Databases and backend infrastructure where you want to prevent proprietary forks. It scares legal departments in large enterprises, which can be a double-edged sword: it forces a commercial conversation (selling an enterprise license to bypass AGPL) but slows down initial adoption.
+
+### **Source-Available (BSL / ELv2 / SSPL)**
+
+- **GTM Effect:** High protection. Effectively proprietary for competitors, free for users. It is "Open Source" in spirit (code is visible) but not in strict definition (OSI).
+
+- **Best For:** Modern COSS companies (MongoDB, CockroachDB, Sentry) protecting against cloud cannibalization. This has become the de facto standard for the "application layer" of infrastructure.
+
+## Avoiding the "Rug Pull": A Failure of Trust
+
+The most damaging event in the COSS ecosystem is the "Rug Pull"—when a company builds a massive community on a permissive license (Apache) and then switches to a restrictive license (BSL) overnight to force monetization. This feels like a betrayal. It is a tax on the hobbyist and the early adopter who built your success.
+
+**The COSSA Standard:** If you must change licenses to survive (e.g., moving from Apache to BSL to stop a cloud competitor), you must do so with extreme care and integrity.
+
+1. **Exempt the "Little Guy":** Ensure the new license is permissive for non-commercial use, development, and companies under a revenue threshold. You are targeting the "Whales," not the "Minnows."
+
+2. **Honor the Legacy:** Never retroactively re-license old versions. The code that was free remains free. The new license applies only to *future* versions and updates.
+
+3. **Give Notice:** Communicate the "Why" clearly. Do not use legal jargon. Explain the economic reality: "We need to protect our ability to invest in R\&D against cloud providers who strip-mine our work. This change ensures we can keep building the best product for you."
+
+4. **No "Bait and Switch":** Do not move features from the Free tier to the Paid tier. This is a cardinal sin. You can only move features from Paid to Free (commoditization).
+
+## Practical Execution
+
+### **1. Don't Let Lawyers Pick Your License**
+
+Your business model picks your license. If your model is "Open Core," you need a permissive core and a proprietary wrapper. If your model is "Dual Licensing" (selling exceptions to GPL), you need a copyleft license. Lawyers optimize for risk; you must optimize for *leverage*.
+
+### **2. The "Buyer vs. User" Gating Rule**
+
+When deciding which features go into which license bucket (Core vs. Enterprise), use this heuristic:
+
+- **User Features (Free):** Does this feature solve a problem for an individual developer trying to build an app? (e.g., CLI, local testing, speed). Make it free.
+
+- **Buyer Features (Paid):** Does this feature solve a problem for a manager, an auditor, or a VP? (e.g., Compliance, Reporting, Team Management). Make it paid.
+
+### **3. CLAs vs. DCOs**
+
+To maintain control over your licensing strategy, you must manage copyright.
+
+- **CLA (Contributor License Agreement):** Contributors sign over the rights to their code to you. This gives you the legal power to re-license the project later (e.g., to launch an Enterprise version). This is standard for COSS companies but adds friction to contribution.
+
+- **DCO (Developer Certificate of Origin):** A lighter-weight assertion that the contributor has the right to submit the code. Easier for contributors, but makes re-licensing harder (you need permission from every contributor).
+
+- **Recommendation:** For a venture-backed COSS company, a CLA is often necessary to preserve the option for dual-licensing or defensive re-licensing.
+
+**Strategic Directive:** Your license is your contract with the market. Define it early. Be transparent about your boundaries. And remember: You can always make a restrictive license more permissive later, but making a permissive license more restrictive is a painful, trust-burning one-way door. Measure twice, cut once.

@@ -15,7 +15,7 @@
         "pages": [
           {
             "title": "The Manifesto",
-            "path": "introduction"
+            "path": "the-manifesto"
           },
           {
             "title": "Why Begin With Go To Market",
@@ -36,6 +36,23 @@
           {
             "title": "Phase 3: Scale",
             "path": "phase-3-scale"
+          }
+        ]
+      },
+      {
+        "dropdown": "GTM Bible",
+        "pages": [
+          {
+            "title": "The COSS GTM Bible",
+            "path": "the-coss-gtm-bible"
+          },
+          {
+            "title": "COSS Go-to-Market",
+            "path": "coss-go-to-market"
+          },
+          {
+            "title": "Strategic Licensing",
+            "path": "strategic-licensing"
           }
         ]
       }
