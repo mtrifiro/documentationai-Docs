@@ -9,115 +9,30 @@
     }
   },
   "navigation": {
-    "tabs": [
+    "pages": [
       {
-        "tab": "Documentation",
-        "icon": "book",
-        "groups": [
-          {
-            "group": "Getting Started",
-            "icon": "rocket",
-            "pages": [
-              {
-                "title": "Introduction",
-                "path": "introduction",
-                "icon": "home"
-              },
-              {
-                "title": "Quickstart",
-                "path": "quickstart",
-                "icon": "zap"
-              }
-            ]
-          },
-          {
-            "group": "Core Concepts",
-            "icon": "layers",
-            "pages": [
-              {
-                "title": "Features",
-                "path": "features",
-                "icon": "file-text"
-              }
-            ]
-          },
-          {
-            "group": "Guides",
-            "icon": "compass",
-            "pages": [
-              {
-                "title": "Authentication",
-                "path": "authentication",
-                "icon": "lock"
-              }
-            ]
-          }
-        ]
+        "title": "Introduction",
+        "path": "introduction"
       },
       {
-        "tab": "API Reference",
-        "icon": "code",
-        "groups": [
-          {
-            "group": "Endpoints",
-            "openapi": "api-reference/openapi.yaml"
-          }
-        ]
+        "title": "Why Begin With Go-to-Market",
+        "path": "why-begin-with-go-to-market"
       },
       {
-        "tab": "Help Center",
-        "icon": "help-circle",
-        "pages": [
-          {
-            "title": "Help Center",
-            "path": "help-center",
-            "icon": "home"
-          },
-          {
-            "group": "FAQs",
-            "icon": "help-circle",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Getting Access",
-                "path": "help-center/faq/getting-access"
-              }
-            ]
-          },
-          {
-            "group": "Troubleshooting",
-            "icon": "alert-triangle",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Data Sync Issues",
-                "path": "help-center/troubleshooting/data-sync-issues"
-              }
-            ]
-          },
-          {
-            "group": "Guides",
-            "icon": "book-open",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Invite Team Members",
-                "path": "help-center/guides/invite-team-members"
-              }
-            ]
-          }
-        ]
+        "title": "The Three Phases",
+        "path": "the-three-phases"
       },
       {
-        "tab": "Changelog",
-        "icon": "clock",
-        "pages": [
-          {
-            "title": "Release History",
-            "path": "changelog",
-            "icon": "history"
-          }
-        ]
+        "title": "Phase 1: Ignite",
+        "path": "phase-1-ignite"
+      },
+      {
+        "title": "Phase 3: Scale",
+        "path": "phase-3-scale"
+      },
+      {
+        "title": "Phase 2: Bridge",
+        "path": "phase-2-bridge"
       }
     ]
   }
