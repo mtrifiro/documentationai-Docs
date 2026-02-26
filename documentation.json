@@ -26,7 +26,7 @@
         "pages": [
           {
             "title": "The Manifesto",
-            "path": "the-manifesto"
+            "path": "manifesto"
           },
           {
             "title": "Why Begin With Go To Market",
