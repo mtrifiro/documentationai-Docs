@@ -54,6 +54,10 @@
         "dropdown": "GTM Bible",
         "pages": [
           {
+            "title": "Understanding COSS GTM Maturity",
+            "path": "understanding-coss-gtm-maturity"
+          },
+          {
             "title": "The COSS GTM Bible",
             "path": "the-coss-gtm-bible"
           },
